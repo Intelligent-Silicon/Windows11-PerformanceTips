@@ -33,9 +33,9 @@ PS C:\Windows\System32>
 
 This is not affected by the PowerCfg.
 
-Tip: Hexadecimal values are always display in the format 0x00000000
+Tip: Hexadecimal values are always display in the format ```0x00000000```
 
-Tip: Decimal values are always displayed in the format 0, ie no leading "0x"
+Tip: Decimal values are always displayed in the format ```0```, ie no leading ```0x```
 ```
 HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\PriorityControl
 Win32PrioritySeparation DWORD 0x26  
