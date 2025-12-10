@@ -10,40 +10,26 @@ Tip: Administrator Powershell Prompt PS C:\Windows\System32>
 
 Tip: [UserName] Powershell Prompt PS C:\Users\[UserName]>
 
+```
 PS C:\Windows\System32> powercfg /list
-
 Existing Power Schemes (* Active)
-
-\-----------------------------------
-
+-----------------------------------
 Power Scheme GUID: 381b4222-f694-41f0-9685-ff5bb260df2e  (Balanced) *
-
 PS C:\Windows\System32>
-
 PS C:\Windows\System32> powercfg -duplicatescheme e9a42b02-d5df-448d-aa00-03f14749eb61
-
 Power Scheme GUID: 3ea0e233-0610-4c4e-96f0-0644141592ba  (Ultimate Performance)
-
 PS C:\Windows\System32>
-
 PS C:\Windows\System32> powercfg /setactive 3ea0e233-0610-4c4e-96f0-0644141592ba
-
 PS C:\Windows\System32> powercfg /list
-
 Existing Power Schemes (* Active)
-
-\-----------------------------------
-
+-----------------------------------
 Power Scheme GUID: 381b4222-f694-41f0-9685-ff5bb260df2e  (Balanced)
- 
 Power Scheme GUID: 3ea0e233-0610-4c4e-96f0-0644141592ba  (Ultimate Performance) *
-
 PS C:\Windows\System32>
-
 
 PS C:\Windows\System32> powercfg /setactive 381b4222-f694-41f0-9685-ff5bb260df2e
-
 PS C:\Windows\System32> powercfg /list
+```
 
 ### CPU Quantum
 
@@ -52,11 +38,10 @@ This is not affected by the PowerCfg.
 Tip: Hexadecimal values are always display in the format 0x00000000
 
 Tip: Decimal values are always displayed in the format 0, ie no leading "0x"
-
+```
 HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\PriorityControl
-
 Win32PrioritySeparation DWORD 0x26  
-
+```
 Reboot for changes to take effect.
 
 Desktop: Default 0x26 which provides a short quantum for background processes (31.25 ms) and a longer, boosted quantum for the foreground process (93.75 ms) to maximize apparent responsiveness.
@@ -71,7 +56,7 @@ Desktops run a desktop where the user is only using a Foreground program, so to 
 This value consists of 6 bits divided into the three 2-bit fields 
 ```
 		Short vs Long | Variables vs Fixed | Foreground Boost |
-Bit 		5,4,				3,2,				1,0
+Bit 		5,4					3,2					1,0
 ```		
 ```
 Short vs Long (Bits 4 & 5)
@@ -134,10 +119,11 @@ To Calculate
 HAGS allows the GPU (Graphics Processing Unit) to manage its own video memory, potentially improving performance by reducing CPU overhead.
 It can free up some CPU resources and RAM, potentially boosting FPS (Frames Per Second) by a small margin (1-5%) in some games, but can also help speed up virtualisation software like VMware by offloading graphics to the GPU.
 
+```
 Settings > System > Display > Graphics settings
  
 Optimisations for Windows Games = On 
-
+```
 
 
 
