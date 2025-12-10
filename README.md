@@ -6,9 +6,9 @@ This Power Configuration speeds up the cpu.
 
 Powershell run as Administrator
 
-Tip: Administrator Powershell Prompt PS C:\Windows\System32> 
+Tip: Administrator Powershell Prompt ```PS C:\Windows\System32>``` 
 
-Tip: [UserName] Powershell Prompt PS C:\Users\[UserName]>
+Tip: [UserName] Powershell Prompt ```PS C:\Users\[UserName]>```
 
 ```
 PS C:\Windows\System32> powercfg /list
