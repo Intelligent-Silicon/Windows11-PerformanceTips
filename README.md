@@ -204,7 +204,12 @@ PS C:\Users\[UserName]\Downloads\dgreadiness_v3.6\dgreadiness_v3.6>
 
 Reboot the machine.
 
-
+Launch Powershell as Administrator
+```
+PS C:\Windows\system32> bcdedit /set hypervisorlaunchtype off
+The operation completed successfully.
+PS C:\Windows\system32>
+```
 
 
 
