@@ -69,10 +69,11 @@ Servers run alot of background processes like mail servers, database servers, et
 Desktops run a desktop where the user is only using a Foreground program, so to make the Foreground process ie the foreground program more responsive, the Foreground quanta (time slice) needs to be bigger.
 
 This value consists of 6 bits divided into the three 2-bit fields 
-
+```
 		Short vs Long | Variables vs Fixed | Foreground Boost |
-Bit 		5,4,				3,2,				1,0		
-
+Bit 		5,4,				3,2,				1,0
+```		
+```
 Short vs Long (Bits 4 & 5)
 
 	1 = specifies long quanta
@@ -101,6 +102,7 @@ Decimal to two bits
 	1 = 01
 	
 	2 = 10
+```
 
 To Calculate 
 	
