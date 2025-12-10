@@ -16,6 +16,7 @@ Existing Power Schemes (* Active)
 -----------------------------------
 Power Scheme GUID: 381b4222-f694-41f0-9685-ff5bb260df2e  (Balanced) *
 PS C:\Windows\System32>
+
 PS C:\Windows\System32> powercfg -duplicatescheme e9a42b02-d5df-448d-aa00-03f14749eb61
 Power Scheme GUID: 3ea0e233-0610-4c4e-96f0-0644141592ba  (Ultimate Performance)
 PS C:\Windows\System32>
@@ -26,9 +27,6 @@ Existing Power Schemes (* Active)
 Power Scheme GUID: 381b4222-f694-41f0-9685-ff5bb260df2e  (Balanced)
 Power Scheme GUID: 3ea0e233-0610-4c4e-96f0-0644141592ba  (Ultimate Performance) *
 PS C:\Windows\System32>
-
-PS C:\Windows\System32> powercfg /setactive 381b4222-f694-41f0-9685-ff5bb260df2e
-PS C:\Windows\System32> powercfg /list
 ```
 
 ### CPU Quantum
