@@ -13,7 +13,7 @@ Tip: [UserName] Powershell Prompt PS C:\Users\[UserName]>
 PS C:\Windows\System32> powercfg /list
 
 Existing Power Schemes (* Active)
------------------------------------
+\-----------------------------------
 Power Scheme GUID: 381b4222-f694-41f0-9685-ff5bb260df2e  (Balanced) *
 PS C:\Windows\System32>
 
