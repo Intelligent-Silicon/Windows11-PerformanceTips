@@ -75,32 +75,32 @@ Bit 		5,4,				3,2,				1,0
 
 Short vs Long (Bits 4 & 5)
 
-	1 = specifies long quanta
+	\1 = specifies long quanta
 	
-	2 = specifies short quanta
+	\2 = specifies short quanta
 	
 Variable vs Fixed
 
-	1 = vary the quantum for the foreground process
+	\1 = vary the quantum for the foreground process
 	
-	2 = quantum values dont vary for the foreground process
+	\2 = quantum values dont vary for the foreground process
 	
 Foreground Boost
 
-	0 = No boost
+	\0 = No boost
 	
-	1 = Medium boost
+	\1 = Medium boost
 	
-	2 = Maximum boost
+	\2 = Maximum boost
 	
 	
 Decimal to two bits
 
-	0 = 00
+	\0 = 00
 	
-	1 = 01
+	\1 = 01
 	
-	2 = 10
+	\2 = 10
 
 To Calculate 
 	
