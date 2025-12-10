@@ -74,8 +74,8 @@ This value consists of 6 bits divided into the three 2-bit fields
 Bit 		5,4,				3,2,				1,0		
 
 Short vs Long (Bits 4 & 5)
-	1 = specifies long quanta
-	2 = specifies short quanta
+>	1 = specifies long quanta
+>	2 = specifies short quanta
 	
 Variable vs Fixed
 	1 = vary the quantum for the foreground process
@@ -118,7 +118,8 @@ To Calculate
 HAGS allows the GPU (Graphics Processing Unit) to manage its own video memory, potentially improving performance by reducing CPU overhead.
 It can free up some CPU resources and RAM, potentially boosting FPS (Frames Per Second) by a small margin (1-5%) in some games, but can also help speed up virtualisation software like VMware by offloading graphics to the GPU.
 
-Settings > System > Display > Graphics settings 
+Settings > System > Display > Graphics settings
+ 
 Optimisations for Windows Games = On 
 
 
