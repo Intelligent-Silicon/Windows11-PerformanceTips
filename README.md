@@ -123,5 +123,88 @@ Settings > System > Display > Graphics settings
 Optimisations for Windows Games = On 
 ```
 
+### Notepad++ run multiple instances for Alt-Tabbing purposes
+
+	```
+	Notepad++ > Settings > Preferences > Multi-Instance & Date > Always in multi-instance mode
+	```
+
+### Vmware using Intel VT-x/EPT or AMD-V/RVI
+
+Some of the windows security measures Hyper-V. This can reduce performance in Windows when using virtualisation software like VMware Workstation.
+Windows 11 24H2 has a bug which prevents it from being disabled, so the final step has to be performed.
+This step will reduce the built-in security measures Microsoft has built into Windows 11, but for low performance machines, this can help speed things up a bit.
+
+```
+Load services.msc 
+Stop (right mouse click on the service and choose stop) all services with Hyper-V in the name and "HV Host Service".
+```
+```
+Features - Windows Features 
+Uncheck Hyper-V (including all sub-items),  Windows Hypervisor Platform, & (WSL) Linux subsystem for windows.
+Reboot 
+```
+
+Launch Powershell as Administrator
+```
+PS C:\Windows\system32> bcdedit /set hypervisorlaunchtype off
+The operation completed successfully.
+PS C:\Windows\system32>
+```
+
+If the machine is running Group Policy.
+```
+Local Computer Policy > Computer Configuration > Administrative Templates > System > Device Guard
+Double-click on "Turn on Virtualization Based Security".
+Select Disabled and click OK.
+```
+
+In the search box type ```coreisolation```.
+Switch off "Memory Integrity".
+
+
+For Win11 24H2 perform this step.
+Download the Device Guard and Credential Guard hardware readiness tool from https://www.microsoft.com/en-us/download/details.aspx?id=53337
+
+Extract the zip file contents.
+Launch Powershell as Administrator
+```
+PS C:\Windows\system32> Set-ExecutionPolicy Unrestricted -Scope Process
+
+Execution Policy Change
+The execution policy helps protect you from scripts that you do not trust. Changing the execution policy might expose
+you to the security risks described in the about_Execution_Policies help topic at
+https:/go.microsoft.com/fwlink/?LinkID=135170. Do you want to change the execution policy?
+[Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"): a
+PS C:\Windows\system32>
+```
+
+```
+PS C:\Windows\system32> cd C:\Users\[UserName]\Downloads\dgreadiness_v3.6
+PS C:\Users\[UserName]\Downloads\dgreadiness_v3.6> cd dgreadiness_v3.6
+PS C:\Users\[UserName]\Downloads\dgreadiness_v3.6\dgreadiness_v3.6> .\DG_Readiness_Tool_v3.6.ps1 -Disable
+
+Security warning
+Run only scripts that you trust. While scripts from the internet can be useful, this script can potentially harm your
+computer. If you trust this script, use the Unblock-File cmdlet to allow the script to run without this warning
+message. Do you want to run C:\Users\[UserName]\Downloads\dgreadiness_v3.6\dgreadiness_v3.6\DG_Readiness_Tool_v3.6.ps1?
+[D] Do not run  [R] Run once  [S] Suspend  [?] Help (default is "D"): r
+###########################################################################
+Readiness Tool Version 3.4 Release.
+Tool to check if your device is capable to run Device Guard and Credential Guard.
+###########################################################################
+Disabling Device Guard and Credential Guard
+Deleting RegKeys to disable DG/CG
+Disabling Hyper-V and IOMMU
+Disabling Hyper-V and IOMMU successful
+
+Please reboot the machine, for settings to be applied.
+PS C:\Users\[UserName]\Downloads\dgreadiness_v3.6\dgreadiness_v3.6>
+```
+
+Reboot the machine.
+
+
+
 
 
