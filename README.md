@@ -224,7 +224,7 @@ PS C:\Windows\system32>
 
 ### Windows Special Effects
 
-If you want snappy instant windows without the special effects like fading in and out, and other effects, switch off the effects found in 
+If you want snappy instant windows without the special animation effects like fading in and out, and other effects, switch off the effects found in 
 ```Settings > Accessibility > Visual Effects``` 
 
 or to switch them all off for maximum Performance
