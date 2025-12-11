@@ -2,7 +2,9 @@
 
 ### Ultimate Performance
 
-This Power Configuration keeps things active/awake for longer, so the lag experienced whilst parts of the computer come alive, is removed. Adjusting the CPU Quantum below will give the best Desktop Experience though.
+This Power Configuration keeps things active/awake for longer, so the lag experienced whilst parts of the computer come alive, is removed. Adjusting the CPU Quantum (see section below) will give the best Desktop Experience though.
+
+Using the below will hide options seen in ```Settings > System > Power & Battery > Power Mode``` but can be seen in ```Control Panel > Power Options > Choose or Customize a power plan```.
 
 Powershell run as Administrator
 
@@ -31,7 +33,7 @@ PS C:\Windows\System32>
 
 ### CPU Quantum
 
-This is not affected by the PowerCfg.
+Altering this will see the best performance gains.
 
 Tip: Hexadecimal values are always display in the format ```0x00000000```
 
@@ -114,13 +116,22 @@ To Calculate
 
 ### HAGS (Hardware-accelerated GPU Scheduling)
 
+Performance gains are not noticeable, but could benefit some Gamers.
+
 HAGS allows the GPU (Graphics Processing Unit) to manage its own video memory, potentially improving performance by reducing CPU overhead.
-It can free up some CPU resources and RAM, potentially boosting FPS (Frames Per Second) by a small margin (1-5%) in some games, but can also help speed up virtualisation software like VMware by offloading graphics to the GPU.
+It can free up some CPU resources and RAM, potentially boosting FPS (Frames Per Second) by a small margin (1-5%) in some games, but can also help speed up virtualisation software like VMware by offloading graphics to the GPU. 
 
 ```
 Settings > System > Display > Graphics settings
  
 Optimisations for Windows Games = On 
+```
+
+The following Registry keey appears to have no effect on the HAGS setting using the Settings route shown above. It is suggested on some other websites though, so YMMV.
+
+```
+HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\GraphicsDrivers
+HwSchMode DWORD controls it (0=On, 1=Off, 2=Default/Auto)
 ```
 
 ### Notepad++ run multiple instances for Alt-Tabbing purposes
@@ -211,5 +222,11 @@ The operation completed successfully.
 PS C:\Windows\system32>
 ```
 
+### Windows Special Effects
 
+If you want snappy instant windows without the special effects like fading in and out, and other effects, switch off the effects found in 
+```Settings > Accessibility > Visual Effects``` 
 
+or to switch them all off for maximum Performance
+Press Windows Key and R, to get the Windows Run window up, and paste in ```SystemPropertiesPerformance.exe``` and run it. 
+A new window titled Performance Options will appear where you can select ```Adjust for Best Performance```.
