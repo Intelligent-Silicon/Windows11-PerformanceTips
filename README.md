@@ -2,7 +2,7 @@
 
 ### Ultimate Performance
 
-This Power Configuration speeds up the cpu.
+This Power Configuration keeps things active/awake for longer, so the lag experienced whilst parts of the computer come alive, is removed. Adjusting the CPU Quantum below will give the best Desktop Experience though.
 
 Powershell run as Administrator
 
