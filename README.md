@@ -1,8 +1,14 @@
 # Windows11-PerformanceTips
 
+### Which program bitness to download
+
+Where possible its generally best to download the 32bit version because these are still faster than 64bit programs and are generally smaller in file size and this is especially important if the desktop computer or laptop is a low spec machine.
+
+If you are doing some serious computing, like running SQL server, an Ai, or virtualisation software, then a 64bit version is best in order to take advantage of extra RAM.
+
 ### Ultimate Performance
 
-This Power Configuration keeps things active/awake for longer, so the lag experienced whilst parts of the computer come alive, is removed. Adjusting the CPU Quantum (see section below) will give the best Desktop Experience though.
+This Power Configuration keeps things active/awake for longer, so the lag experienced whilst parts of the computer come alive, is removed. Adjusting the CPU Quantum (see CPU Quantum section below) will give the best Desktop Experience though.
 
 Using the below will hide options seen in ```Settings > System > Power & Battery > Power Mode``` but can be seen in ```Control Panel > Power Options > Choose or Customize a power plan```.
 
@@ -33,9 +39,9 @@ PS C:\Windows\System32>
 
 ### CPU Quantum
 
-Altering this will see the best performance gains.
+Altering this will see the best performance gains for even the slowest most basic of desktop or laptop computers.
 
-Tip: Hexadecimal values are always display in the format ```0x00000000```
+Tip: Hexadecimal values are always display in the format ```0x00000000``` or lead with ```0x```
 
 Tip: Decimal values are always displayed in the format ```0```, ie no leading ```0x```
 ```
@@ -51,7 +57,7 @@ Server: Default 0x18 which provides fixed quantums (187.5 ms) for both foregroun
 
 Servers run alot of background processes like mail servers, database servers, etc etc, and will very rarely be used for a desktop, so the background quanta (time slice) needs to be bigger and have a small foreground quanta.
 
-Desktops run a desktop where the user is only using a Foreground program, so to make the Foreground process ie the foreground program more responsive, the Foreground quanta (time slice) needs to be bigger.
+Desktops run a desktop where the user is only using a Foreground program at any one time, although they might have more than one program open, so to make the Foreground process ie the foreground program more responsive, the Foreground quanta (time slice) needs to be bigger.
 
 This value consists of 6 bits divided into the three 2-bit fields 
 ```
@@ -102,16 +108,16 @@ To Calculate
 	= 010110 = 22 = 0x16
 
 		Hex 	Decimal		Binary		Short vs Long, 	Variable vs Fixed, 		Foreground Boost  
-		0x16 	22 			010110 		(01) Long, 		(01) Variable, 			(10) Maximum Foreground boost.
+		0x16 	22 			010110 		(01) Long, 		(01) Variable, 			(10) Maximum Foreground boost. -- Best for Desktop Experience**
 		0x18	24			011000		(01) Long, 		(10) Fixed, 			(00) No Foreground boost. -- Best for Server
 		0x2A 	42 			101010 		(10) Short, 	(10) Fixed, 			(10) Maximum Foreground boost.
 		0x29	41 			101001		(10) Short, 	(10) Fixed, 			(01) Medium foreground boost.
 		0x28 	40			101000		(10) Short, 	(10) Fixed, 			(00) No foreground boost.
-		0x26 	38			100110		(10) Short, 	(01) Variable, 			(10) Maximum Foreground boost. -- Best for Desktop Experience
+		0x26 	38			100110		(10) Short, 	(01) Variable, 			(10) Maximum Foreground boost. -- Best for Desktop Experience 
 		0x25 	37			100101		(10) Short, 	(01) Variable, 			(01) Medium foreground boost.
 		0x24 	36			100100		(10) Short, 	(01) Variable, 			(00) No foreground boost.
 
-
+** If you have other desktop programs open and they are running in the background doing stuff (technical term) like calculating or compiling, this could be better for them, but may reduce the responsiveness of the Foreground process ie the program with focus being worked in.
 
 
 ### HAGS (Hardware-accelerated GPU Scheduling)
