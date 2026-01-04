@@ -1,14 +1,23 @@
 # Windows11-PerformanceTips
 
+There are major differences between windows 11 24H2 and 25H2.  
+
 ### Which program bitness to download
 
 Where possible its generally best to download the 32bit version because these are still faster than 64bit programs and are generally smaller in file size and this is especially important if the desktop computer or laptop is a low spec machine.
 
 If you are doing some serious computing, like running SQL server, an Ai, or virtualisation software, then a 64bit version is best in order to take advantage of extra RAM.
 
+### TLDR
+In order of what is most noticable on slow computers.
+
+CPU Quantum 
+Windows Special Effects.
+
+
 ### Ultimate Performance
 
-This Power Configuration keeps things active/awake for longer, so the lag experienced whilst parts of the computer come alive, is removed. Adjusting the CPU Quantum (see CPU Quantum section below) will give the best Desktop Experience though.
+This Power Configuration keeps hardware active/awake for longer, so the lag experienced whilst parts of the computer hardware come alive, is removed. 
 
 Using the below will hide options seen in ```Settings > System > Power & Battery > Power Mode``` but can be seen in ```Control Panel > Power Options > Choose or Customize a power plan```.
 
@@ -133,7 +142,7 @@ Settings > System > Display > Graphics settings
 Optimisations for Windows Games = On 
 ```
 
-The following Registry keey appears to have no effect on the HAGS setting using the Settings route shown above. It is suggested on some other websites though, so YMMV.
+The following Registry key appears to have no effect on the HAGS setting using the Settings route shown above. It is suggested on some other websites though, so probably applies to an earlier version of Windows, eg Windows 10 or Windows 23H2. YMMV.
 
 ```
 HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\GraphicsDrivers
@@ -148,9 +157,15 @@ HwSchMode DWORD controls it (0=On, 1=Off, 2=Default/Auto)
 
 ### Vmware using Intel VT-x/EPT or AMD-V/RVI
 
-Some of the windows security measures Hyper-V. This can reduce performance in Windows when using virtualisation software like VMware Workstation.
-Windows 11 24H2 has a bug which prevents it from being disabled, so the final step has to be performed.
-This step will reduce the built-in security measures Microsoft has built into Windows 11, but for low performance machines, this can help speed things up a bit.
+Some of the windows security measures and Linux on Window (WSL) uses Microsoft's Hyper-V virtualisation platform. 
+
+This can reduce performance in Windows when using virtualisation software like VMware Workstation because it has to use MS Hyper-V and not its own code.
+
+These instructions below will disable and remove Hyper-V so that Vmware Workstation can use the VM Guest option, Processors > Virtualisation Engine > Use Intel VT-x/EPT or AMD-V/RVI > Ticked.
+
+Windows 11 24H2 has a "bug" which prevents Hyper-V from being disabled, so the final step below has to be performed.
+
+These steps will reduce the built-in security measures Microsoft has built into Windows 11 because they use Hyper-V, but for low performance machines, disabling this can help speed things up a bit. If using Windows Defender/Security and not an external AntiVirus solution, switching off some of the Windows Defender/Security options which connects to the internet will also speed up the responsiveness of programs. 
 
 ```
 Load services.msc 
@@ -235,4 +250,6 @@ If you want snappy instant windows without the special animation effects like fa
 
 or to switch them all off for maximum Performance
 Press Windows Key and R, to get the Windows Run window up, and paste in ```SystemPropertiesPerformance.exe``` and run it. 
-A new window titled Performance Options will appear where you can select ```Adjust for Best Performance```.
+A new window titled Performance Options will appear where you can select ```Adjust for Best Performance```. Tick Adjust for Best Performance, all options will become unticked.
+Tick the option Smooth Edges of screen Fonts. This option will make webpages and desktop apps appear properly.
+
