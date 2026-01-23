@@ -169,7 +169,7 @@ These steps will reduce the built-in security measures Microsoft has built into 
 
 ## Step 1.
 
-⊞ Win+R Services.msc
+`#0969DA` ⊞ Win+R Services.msc
 
 Stop (right mouse click on the service and choose stop) all services with Hyper-V in the name and "HV Host Service".
 ```
