@@ -214,8 +214,46 @@ Reboot
 
 ### Step 3
 
-Launch Powershell as Administrator
+Launch Powershell as Administrator and switch the `hypervisorlaunchtype` to Off. 
+
 ```
+PS C:\WINDOWS\system32>
+Windows Boot Manager
+--------------------
+identifier              {bootmgr}
+device                  partition=\Device\HarddiskVolume1
+path                    \EFI\Microsoft\Boot\bootmgfw.efi
+description             Windows Boot Manager
+locale                  en-GB
+inherit                 {globalsettings}
+default                 {current}
+resumeobject            {f37145b4-3608-4ae7-9e69-f1fa46dfa4f9}
+displayorder            {current}
+toolsdisplayorder       {memdiag}
+timeout                 30
+
+Windows Boot Loader
+-------------------
+identifier              {current}
+device                  partition=C:
+path                    \WINDOWS\system32\winload.efi
+description             Windows 11
+locale                  en-GB
+inherit                 {bootloadersettings}
+recoverysequence        {bfb1b580-779a-4488-8246-91eea191da22}
+displaymessageoverride  Recovery
+recoveryenabled         Yes
+isolatedcontext         Yes
+allowedinmemorysettings 0x15000075
+osdevice                partition=C:
+systemroot              \WINDOWS
+resumeobject            {b7a8ff98-0bc4-4820-aaba-08b50bad728f}
+nx                      OptIn
+bootmenupolicy          Standard
+hypervisorlaunchtype    On
+PS C:\WINDOWS\system32>
+
+
 PS C:\Windows\system32> bcdedit /set hypervisorlaunchtype off
 The operation completed successfully.
 PS C:\Windows\system32>
