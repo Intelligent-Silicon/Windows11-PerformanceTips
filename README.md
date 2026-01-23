@@ -169,12 +169,11 @@ These steps will reduce the built-in security measures Microsoft has built into 
 
 ## Step 1.
 
-`#0969DA` `⊞ Win+R` Services.msc
+`⊞ Win + R` Services.msc
 
 Stop (right mouse click on the service and choose stop) all services with Hyper-V in the name and "HV Host Service".
-```
-Get-WmiObject Win32_Service | select-object Name | select-string -pattern 'Hyper-V'
-```
+
+Alternatively load Powershell with Administrator level security. Any services running with Hyper-V will be displayed like the example below:
 
 ```
 PS C:\WINDOWS\system32> Get-Service -DisplayName "*Hyper-V*"
