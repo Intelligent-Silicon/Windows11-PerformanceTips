@@ -172,6 +172,41 @@ Load services.msc
 Stop (right mouse click on the service and choose stop) all services with Hyper-V in the name and "HV Host Service".
 ```
 ```
+Get-WmiObject Win32_Service | select-object Name | select-string -pattern 'Hyper-V'
+```
+
+```
+PS C:\WINDOWS\system32> Get-Service -DisplayName "*Hyper-V*"
+
+Status   Name               DisplayName
+------   ----               -----------
+Stopped  vmicguestinterface Hyper-V Guest Service Interface
+Stopped  vmicheartbeat      Hyper-V Heartbeat Service
+Stopped  vmickvpexchange    Hyper-V Data Exchange Service
+Stopped  vmicrdv            Hyper-V Remote Desktop Virtualizati...
+Stopped  vmicshutdown       Hyper-V Guest Shutdown Service
+Stopped  vmictimesync       Hyper-V Time Synchronization Service
+Stopped  vmicvmsession      Hyper-V PowerShell Direct Service
+Stopped  vmicvss            Hyper-V Volume Shadow Copy Requestor
+
+
+PS C:\WINDOWS\system32>
+```
+
+```
+PS C:\WINDOWS\system32> Get-Service -DisplayName "*HV*"
+
+Status   Name               DisplayName
+------   ----               -----------
+Running  HvHost             HV Host Service
+
+
+PS C:\WINDOWS\system32>
+```
+
+
+
+```
 Features - Windows Features 
 Uncheck Hyper-V (including all sub-items),  Windows Hypervisor Platform, & (WSL) Linux subsystem for windows.
 Reboot 
