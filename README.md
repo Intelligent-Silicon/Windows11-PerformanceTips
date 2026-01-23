@@ -167,10 +167,11 @@ Windows 11 24H2 has a "bug" which prevents Hyper-V from being disabled, so the f
 
 These steps will reduce the built-in security measures Microsoft has built into Windows 11 because they use Hyper-V, but for low performance machines, disabling this can help speed things up a bit. If using Windows Defender/Security and not an external AntiVirus solution, switching off some of the Windows Defender/Security options which connects to the internet will also speed up the responsiveness of programs. 
 
-```
-Load services.msc 
+## Step 1.
+
+⊞ Win+R Services.msc
+
 Stop (right mouse click on the service and choose stop) all services with Hyper-V in the name and "HV Host Service".
-```
 ```
 Get-WmiObject Win32_Service | select-object Name | select-string -pattern 'Hyper-V'
 ```
