@@ -214,7 +214,7 @@ Reboot
 
 ### Step 3
 
-Launch Powershell as Administrator and switch the `hypervisorlaunchtype` to Off. 
+Launch Powershell as Administrator and switch the `hypervisorlaunchtype` to `Off` using Boot Configuration Data Editor (BCDedit). 
 
 ```
 PS C:\WINDOWS\system32>
@@ -259,7 +259,10 @@ The operation completed successfully.
 PS C:\Windows\system32>
 ```
 
+### Step 4
+
 If the machine is running Group Policy.
+
 ```
 Local Computer Policy > Computer Configuration > Administrative Templates > System > Device Guard
 Double-click on "Turn on Virtualization Based Security".
