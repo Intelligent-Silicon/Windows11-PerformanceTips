@@ -2,20 +2,20 @@
 
 There are major differences between windows 11 24H2 and 25H2.  
 
-### Which program bitness to download
+## Which program bitness to download
 
 Where possible its generally best to download the 32bit version because these are still faster than 64bit programs and are generally smaller in file size and this is especially important if the desktop computer or laptop is a low spec machine.
 
 If you are doing some serious computing, like running SQL server, an Ai, or virtualisation software, then a 64bit version is best in order to take advantage of extra RAM.
 
-### TLDR
+## TLDR
 In order of what is most noticable on slow computers.
 
 CPU Quantum 
 Windows Special Effects.
 
 
-### Ultimate Performance
+## Ultimate Performance
 
 This Power Configuration keeps hardware active/awake for longer, so the lag experienced whilst parts of the computer hardware come alive, is removed. 
 
@@ -46,7 +46,7 @@ Power Scheme GUID: 3ea0e233-0610-4c4e-96f0-0644141592ba  (Ultimate Performance) 
 PS C:\Windows\System32>
 ```
 
-### CPU Quantum
+## CPU Quantum
 
 Altering this will see the best performance gains for even the slowest most basic of desktop or laptop computers.
 
@@ -129,7 +129,7 @@ To Calculate
 ** If you have other desktop programs open and they are running in the background doing stuff (technical term) like calculating or compiling, this could be better for them, but may reduce the responsiveness of the Foreground process ie the program with focus being worked in.
 
 
-### HAGS (Hardware-accelerated GPU Scheduling)
+## HAGS (Hardware-accelerated GPU Scheduling)
 
 Performance gains are not noticeable, but could benefit some Gamers.
 
@@ -149,13 +149,13 @@ HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\GraphicsDrivers
 HwSchMode DWORD controls it (0=On, 1=Off, 2=Default/Auto)
 ```
 
-### Notepad++ run multiple instances for Alt-Tabbing purposes
+## Notepad++ run multiple instances for Alt-Tabbing purposes
 
 	```
 	Notepad++ > Settings > Preferences > Multi-Instance & Date > Always in multi-instance mode
 	```
 
-### Vmware using Intel VT-x/EPT or AMD-V/RVI
+## Vmware using Intel VT-x/EPT or AMD-V/RVI
 
 Some of the windows security measures and Linux on Window (WSL) uses Microsoft's Hyper-V virtualisation platform. 
 
@@ -167,13 +167,13 @@ Windows 11 24H2 has a "bug" which prevents Hyper-V from being disabled, so the f
 
 These steps will reduce the built-in security measures Microsoft has built into Windows 11 because they use Hyper-V, but for low performance machines, disabling this can help speed things up a bit. If using Windows Defender/Security and not an external AntiVirus solution, switching off some of the Windows Defender/Security options which connects to the internet will also speed up the responsiveness of programs. 
 
-## Step 1.
+### Step 1.
 
 `⊞ Win` + `R`, Services.msc, `Enter`
 
 Stop (right mouse click on the service and choose stop) all services with Hyper-V in the name and "HV Host Service".
 
-Alternatively load Powershell with Administrator level security. Any services running with Hyper-V will be displayed like the example below:
+Alternatively load Powershell with Administrator level security. Any services installed with Hyper-V will be displayed like the example below:
 
 ```
 PS C:\WINDOWS\system32> Get-Service -DisplayName "*Hyper-V*"
@@ -204,13 +204,13 @@ Running  HvHost             HV Host Service
 PS C:\WINDOWS\system32>
 ```
 
+### Step 2
 
+`⊞ Win` + `R`, OptionalFeatures.exe, `Enter`
 
-```
-Features - Windows Features 
 Uncheck Hyper-V (including all sub-items),  Windows Hypervisor Platform, & (WSL) Linux subsystem for windows.
 Reboot 
-```
+
 
 Launch Powershell as Administrator
 ```
@@ -278,7 +278,7 @@ The operation completed successfully.
 PS C:\Windows\system32>
 ```
 
-### Windows Special Effects
+## Windows Special Effects
 
 If you want snappy instant windows without the special animation effects like fading in and out, and other effects, switch off the effects found in 
 ```Settings > Accessibility > Visual Effects``` 
