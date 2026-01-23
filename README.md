@@ -208,9 +208,11 @@ PS C:\WINDOWS\system32>
 
 `⊞ Win` + `R`, OptionalFeatures.exe, `Enter`
 
-Uncheck Hyper-V (including all sub-items),  Windows Hypervisor Platform, & (WSL) Linux subsystem for windows.
+Uncheck Hyper-V (including all sub-items),  Windows Hypervisor Platform, & Windows Subsystem for Linux.
+
 Reboot 
 
+### Step 3
 
 Launch Powershell as Administrator
 ```
